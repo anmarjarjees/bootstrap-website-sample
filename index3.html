@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- 
+    Bootstrap 4 is designed to be responsive to mobile devices. Mobile-first styles are part of the core framework.
+    - The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+    - The initial-scale=1 part sets the initial zoom level when the page is first loaded by the browser.
+   -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- 
+    Bootstrap CSS:
+    -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- 
+      After loading Bootstrap CSS
+      We are loading our custom styles inside this file:
+     -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bootstrap Navbar</title>
+</head>
+
+<body>
+    <!-- 
+      We placed the Navbar code from Bootstrap at the top of all the other elements
+
+      Using Bootstrap Navbar:      
+      The link: https://getbootstrap.com/docs/4.5/components/navbar/
+
+      We copied the first template (with search box) from Bootstrap then we modified it:
+
+      With Bootstrap, a navigation bar can extend or collapse, depending on the screen size.
+
+      A standard navigation bar is created with the:
+      - .navbar class =>
+      - .navbar-expand-xl|lg|md|sm => a responsive collapsing class:  
+      (stacks the navbar vertically on extra large, large, medium or small screens)
+
+       Choose from:
+       These two classes will affect the text color:
+       - .navbar-light for use with light background colors => This will add a black text color
+       - .navbar-dark for dark background colors => This will add a white text color 
+        
+       Then, customize with .bg-* utilities.
+       These .bg-color classes to change the background color of the navbar
+       (.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger, .bg-secondary, .bg-dark and .bg-light)
+     -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <!-- 
+        The a element is to link to our hompe page with the company title
+        .navbar-brand => .navbar-brand for your company, product, or project name.
+        This class is used to highlight the brand/logo/project name of your page:
+       -->
+        <a class="navbar-brand" href="#">Coffee Corner</a>
+        <!-- 
+        ARIA enables developers to describe their widgets in more detail 
+        by adding special attributes to the markup. 
+        Designed to fill the gap between standard HTML tags and the desktop-style controls
+        found in dynamic web applications, 
+        ARIA provides roles and states that describe the behavior of most familiar UI widgets.
+
+        The original link for this article:
+        https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA
+        
+        You can check this Youtube video title: 
+        ARIA, Accessibility APIs and coding like you give a damn! – Léonie Watson / Front-Trends 2015
+        The link is: https://youtu.be/qdB8SRhqvFc
+
+        Or This Youtube channel: W3C Web Accessibility Initiative (WAI)        
+       -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- The span element for loading the icon in small devices screens -->
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- 
+        This div element to wrap the ul and li items
+        .collapse .navbar-collapse for grouping and hiding navbar contents by a parent breakpoint
+
+        This id value will be used with attribute "data-targer" inside the button element
+       -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- 
+          With the move to flexbox in v4, 
+          you can use margin utilities like .mr-auto to force sibling columns away from one another.
+          The link: https://getbootstrap.com/docs/4.5/layout/grid/#margin-utilities
+
+          So this will place the search box on the right-side and the nav items on the left 
+         -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <!-- We removed the dropdown list menu and the disabled list item -->
+            </ul>
+            <!-- 
+          This form for the search box
+          .form-inline: for any form controls and actions.
+
+          .my-2
+          * m: for margins (adding margins)
+          * y: for both top and bottom margins (think about the y horizontal axis)
+          * -2:  Classes are built from a default Sass map ranging from .25rem to 3rem.
+          so 2 sets margin or padding to .5rem (8px if font-size is 16px)
+
+          For more info: https://www.w3schools.com/bootstrap4/bootstrap_utilities.asp
+
+          .my-lg-0 => set the top and bottom margin to 0 in large screen size only
+        -->
+            <form class="form-inline my-2 my-lg-0">
+                <!-- 
+            .mr-sm-2
+            set the right margin to 2 in small screen
+            -->
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <!-- 
+            .btn-success => as background color
+            .btn-outline-success => as border color 
+            .btn-outline-light => to have a ligt color for both text and border
+           -->
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <header>
+        <!-- empty for now -->
+    </header>
+    <div class="container bg-light">
+        <div class="row text-center">
+            <div class="col-md-4 bg-danger rounded-lg">
+                <h2>French Press</h2>
+                <img class="rounded-circle w-75" src="images/frenchpress.jpg" alt="French Press Coffee">
+                <p>A French press, also known as a press pot, coffee press, or coffee plunger is a coffee brewing device
+                    patented by Italian designer Attilio Calimani in 1929.
+                </p>
+                <a class="btn btn-primary" href="#" role="button">Try our French Press &raquo;</a>
+            </div>
+            <div class="col-md-4 bg-warning rounded-lg">
+                <h2>Mocha Latte</h2>
+                <img class="rounded-circle w-75" src="images/mocha_latte.jpg" alt="Mocha Latte Coffee">
+                <p>A caffe mocha is a variant of a caffè latte. Like a latte, it is typically one third espresso and two
+                    thirds
+                    steamed milk, but a portion of chocolate is added, typically in the form of a chocolate syrup.
+                </p>
+                <a class="btn btn-primary" href="#" role="button">Try our Mocha Latte &raquo;</a>
+            </div>
+            <div class="col-md-4 bg-info rounded-lg">
+                <h2>Turkish Coffee</h2>
+                <img class="rounded-circle w-75" src="images/turkish.jpg" alt="">
+                <p>Beans for Turkish coffee are ground to a fine powder. Turkish coffee is prepared by immersing the
+                    coffee
+                    grounds in water and heating until it just boils.
+                </p>
+                <a class="btn btn-primary" href="#" role="button">Try our Turkish Coffee &raquo;</a>
+            </div>
+        </div> <!-- end div.row -->
+    </div> <!-- end div.container -->
+
+    <footer class="jumbotron text-center">
+        <h1 class="display-4">Coffee Corner</h1>
+        <p class="lead font-italic font-weight-bold">The corner where you can have your favourite coffee mixed with your
+            favourite moments!</p>
+    </footer>
+
+    <!-- All our HTML elements have to be placed before calling our scripts: -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
