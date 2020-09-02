@@ -1,0 +1,133 @@
+<!-- The Bootstrap starting Template -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- 
+    Bootstrap 4 is designed to be responsive to mobile devices. Mobile-first styles are part of the core framework.
+    - The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+    - The initial-scale=1 part sets the initial zoom level when the page is first loaded by the browser.
+   -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- 
+    Bootstrap CSS:
+    You can check the link but it's the minified version that it's hard to read
+    You can use this website "Code Beautify", the link is "https://codebeautify.org/" 
+    to format the code nicely
+    -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- 
+      After loading Bootstrap CSS
+      We are loading our custom styles inside this file:
+     -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>The basic content</title>
+</head>
+
+<body>
+    <header>
+        <!-- empty for now -->
+    </header>
+    <!-- 
+Bootstrap comes with three different containers:
+.container, which sets a max-width at each responsive breakpoint
+-->
+    <div class="container bg-light">
+        <!-- 
+        text-center: Center aligned text on all viewport sizes
+        The link: https://getbootstrap.com/docs/4.5/utilities/text/#text-alignment
+         -->
+        <div class="row text-center">
+            <!-- 
+                Use .rounded-lg or .rounded-sm for larger or smaller border-radius. 
+                The link: https://getbootstrap.com/docs/4.5/utilities/borders/#border-radius
+             -->
+            <div class="col-md-4 bg-danger rounded-lg">
+                <h2>French Press</h2>
+                <!-- 
+                Make the images look like circles by adding rounded corners:
+                The .rounded-circle class shapes the image to a circle:
+                You can check this link: https://www.w3schools.com/bootstrap4/bootstrap_images.asp
+
+                Or you can check this link: https://getbootstrap.com/docs/4.5/utilities/borders/
+                
+            * .w-75 is a bootstrap utility class to set the image to be 75% of its container (the parent element)
+            Link: https://getbootstrap.com/docs/4.5/utilities/sizing/
+           -->
+                <img class="rounded-circle w-75" src="images/frenchpress.jpg" alt="French Press Coffee">
+                <p>A French press, also known as a press pot, coffee press, or coffee plunger is a coffee brewing device
+                    patented by Italian designer Attilio Calimani in 1929.
+                </p>
+                <!-- 
+                The .btn classes are designed to be used with the <button> element. 
+                However, you can also use these classes on <a> or <input> elements (though some browsers may apply a slightly different rendering).
+
+                adding HTML4 Entities
+                Check this link: https://www.w3schools.com/charsets/ref_html_entities_4.asp
+                -->
+                <a class="btn btn-primary" href="#" role="button">Try our French Press &raquo;</a>
+            </div>
+            <div class="col-md-4 bg-warning rounded-lg">
+                <h2>Mocha Latte</h2>
+                <img class="rounded-circle w-75" src="images/mocha_latte.jpg" alt="Mocha Latte Coffee">
+                <p>A caffe mocha is a variant of a caffè latte. Like a latte, it is typically one third espresso and two
+                    thirds
+                    steamed milk, but a portion of chocolate is added, typically in the form of a chocolate syrup.
+                </p>
+                <a class="btn btn-primary" href="#" role="button">Try our Mocha Latte &raquo;</a>
+            </div>
+            <div class="col-md-4 bg-info rounded-lg">
+                <h2>Turkish Coffee</h2>
+                <img class="rounded-circle w-75" src="images/turkish.jpg" alt="">
+                <p>Beans for Turkish coffee are ground to a fine powder. Turkish coffee is prepared by immersing the
+                    coffee
+                    grounds in water and heating until it just boils.
+                </p>
+                <a class="btn btn-primary" href="#" role="button">Try our Turkish Coffee &raquo;</a>
+            </div>
+        </div> <!-- end div.row -->
+    </div> <!-- end div.container -->
+
+    <!-- 
+    Adding footer:
+    Bootstrap 4 Jumbotron indicates a big grey box for calling extra attention to some special content or information.
+    Tip: Inside a jumbotron you can put nearly any valid HTML, including other Bootstrap elements/classes.
+
+    We can use div as usual instead of footer 
+  -->
+    <footer class="jumbotron text-center">
+        <!-- 
+            Display Headings:
+            Display headings are used to stand out more than normal headings (larger font-size and lighter font-weight), 
+            and there are four classes to choose from: .display-1, .display-2, .display-3, .display-4
+            The link: https://www.w3schools.com/bootstrap4/bootstrap_typography.asp
+         -->
+        <h1 class="display-4">Coffee Corner</h1>
+        <!-- 
+            .lead: Make a paragraph stand out
+         -->
+        <p class="lead font-italic font-weight-bold">The corner where you can have your favourite coffee mixed with your
+            favourite moments!</p>
+    </footer>
+
+    <!-- All our HTML elements have to be placed before calling our scripts: -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
