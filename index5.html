@@ -22,7 +22,7 @@
       We are loading our custom styles inside this file:
      -->
     <link rel="stylesheet" href="css/style.css">
-    <title>Bootstrap Carousels</title>
+    <title>Bootstrap Modal And other spacing</title>
 </head>
 
 <body>
@@ -49,31 +49,6 @@
             </div>
         </nav>
     </header>
-
-    <!-- 
-      Carousel:
-      A slideshow component for cycling through elements—images or slides of text—like a carousel.
-      Boostrap Link: https://getbootstrap.com/docs/4.5/components/carousel/
-
-      Via data-* Attributes:
-      * The data-* attribute is used to store custom data private to the page or application.
-      * The data-* attribute gives us the ability to embed custom data attributes on all HTML elements.
-
-      The data-ride="carousel" attribute activates the carousel.
-      The data-slide and data-slide-to attributes specifies which slide to go to.
-      The data-slide attribute accepts two values: prev or next, while data-slide-to accept numbers.
-
-      The data-ride="carousel" attribute is used to mark a carousel as animating starting at page load. 
-      If you don’t use data-ride="carousel" to initialize your carousel, 
-      you have to initialize it yourself. 
-      It cannot be used in combination with (redundant and unnecessary) explicit JavaScript initialization of the same carousel.
-
-      Notice that we renamed "carouselExampleCaptions" to be "carouselControlsCaptions"
-
-      We also added:
-        .d-none => to make it hidden (in css we used display: none)
-        .d-md-block => for the miduim size and beyond will be display: block
-     -->
     <div id="carouselControlsCaptions" class="carousel slide d-none d-md-block" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselControlsCaptions" data-slide-to="0" class="active"></li>
@@ -81,29 +56,9 @@
             <li data-target="#carouselControlsCaptions" data-slide-to="2"></li>
             <li data-target="#carouselControlsCaptions" data-slide-to="3"></li>
         </ol>
-        <!-- 
-        This div.carousel-inner will be the wrapper for the images
-        -->
         <div class="carousel-inner">
-            <!-- 
-          One of the images has to have the class active to be displayed in the page
-          which is usually the first image, then Bootstrap will remove/add this class 
-          to all the images in this carousel
-        -->
             <div class="carousel-item active">
-                <!-- 
-            * .w-100 is a bootstrap utility class to set the image to be 100% as it's container
-            Link: https://getbootstrap.com/docs/4.5/utilities/sizing/
-
-            * .d-block is a bootrap utility class to set display to block and Visible on all screen sizes
-            Link: https://getbootstrap.com/docs/4.5/utilities/display/
-                 -->
                 <img src="images/carousel1.jpg" class="d-block w-100" alt="carousel coffee image1">
-                <!-- 
-                    .carousel-caption: Add captions to your slides within any .carousel-item. 
-                    They can be easily hidden on smaller viewports, as shown below, with optional display utilities. 
-                    We hide them initially with .d-none and bring them back on medium-sized devices with .d-md-block.
-                -->
                 <div class="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
                     <p><span>Photo by <a target="_blank"
@@ -151,13 +106,8 @@
             </div>
         </div> <!-- end div.carousel-inner -->
 
-        <!-- Adding the controls button: Left (Previous) and Right (Next) -->
         <a class="carousel-control-prev" href="#carouselControlsCaptions" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <!--  
-        .sr-only: Hide an element to all devices except screen readers
-        Bootstrap Link: https://getbootstrap.com/docs/4.5/utilities/screen-readers/
-        -->
             <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#carouselControlsCaptions" role="button" data-slide="next">
@@ -166,8 +116,17 @@
         </a>
     </div> <!-- end div#carouselControlsCaptions -->
 
-    <div class="container bg-light">
-        <div class="row text-center">
+    <div class="container bg-dark">
+        <!-- 
+    Modify the margins and the padding of these three div elements
+    Adding padding for top and botton of 5 and etc..
+
+    adding a padding of 2 rem to top and bottom
+    py-2
+
+    adding a margin of 2 to all the sides
+    -->
+        <div class="row text-center py-3 m-2 new-flav">
             <div class="col-md-4 bg-danger rounded-lg">
                 <h2>French Press</h2>
                 <img class="rounded-circle w-75" src="images/frenchpress.jpg" alt="French Press Coffee">
@@ -196,6 +155,99 @@
             </div>
         </div> <!-- end div.row -->
     </div> <!-- end div.container -->
+
+    <!-- 
+    Adding nother new container for signup section:
+    - make it fluid to take the entire width of the browser window (the viewport)
+    - dark backrgound color
+   -->
+    <div class="container-fluid bg-dark">
+        <!-- As usual we need div.row that contains the columns div(s): -->
+        <div class="row text-center">
+            <!-- 
+        - italic and bold font: https://getbootstrap.com/docs/4.5/utilities/text/#font-weight-and-italics
+        - light text color: https://getbootstrap.com/docs/4.5/utilities/colors/#color
+        -->
+            <div class="col-md-8 bg-danger font-weight-bold font-italic text-light">
+                <h2>Stay Connected with us</h2>
+                <p>Sign up to get emails about exclusive offers from Coffe Corners!</p>
+            </div>
+            <div class="col-md-4 bg-warning">
+                <!-- 
+                    Button trigger modal 
+                    
+                    Adding Bootstrap button:
+                    https://getbootstrap.com/docs/4.5/components/buttons/
+
+                    - We need to connect this button with our modal,
+                    so it will activate our model window (div) when this button is clicked
+
+                    - We can do it by using: 
+                    * data-toggle="modal" 
+                    * data-target="#exampleModal"
+
+                    The link: https://getbootstrap.com/docs/4.5/components/modal/#varying-modal-content
+                -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-modal">
+                    Sing Up
+                </button>
+            </div>
+        </div> <!-- end div.row -->
+    </div> <!-- end div.container-fluid -->
+
+    <!-- 
+    Modal (Bootstrap Component): Bootstrap’s JavaScript modal plugin to add dialogs to your site for lightboxes, 
+    user notifications, or completely custom content. 
+    The main link for Modal: https://getbootstrap.com/docs/4.5/components/modal/
+
+    The section link we used below: https://getbootstrap.com/docs/4.5/components/modal/#varying-modal-content
+
+    modify the id="exampleModal" to be id="signup-modal"
+    We renamed all the text "exampleModal" to be "signup-modal"
+    -->
+    <div class="modal fade" id="signup-modal" tabindex="-1" aria-labelledby="signup-modalLabel" aria-hidden="true">
+        <!-- 
+        .modal-dialog: makes the modal narrower than the full width of the page
+        -->
+        <div class="modal-dialog">
+            <!-- 
+            .modle-content: the content inside our modal
+            -->
+            <div class="modal-content">
+                <!-- 
+          .modal-header:
+         -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signup-modalLabel">New message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- 
+          .modal-body:
+         -->
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <!-- 
+          .modal-footer:
+         -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="jumbotron text-center">
         <h1 class="display-4">Coffee Corner</h1>
