@@ -117,15 +117,6 @@
     </div> <!-- end div#carouselControlsCaptions -->
 
     <div class="container bg-dark">
-        <!-- 
-    Modify the margins and the padding of these three div elements
-    Adding padding for top and bottom of 5 and etc..
-
-    adding a padding of 2 rem to top and bottom
-    py-2
-
-    adding a margin of 2 to all the sides
-    -->
         <div class="row text-center py-3 m-2 new-flav">
             <div class="col-md-4 bg-danger rounded-lg">
                 <h2>French Press</h2>
@@ -156,38 +147,14 @@
         </div> <!-- end div.row -->
     </div> <!-- end div.container -->
 
-    <!-- 
-    Adding another new container for signup section:
-    - make it fluid to take the entire width of the browser window (the viewport)
-    - dark background color
-   -->
     <div class="container-fluid bg-dark">
         <!-- As usual we need div.row that contains the columns div(s): -->
         <div class="row text-center">
-            <!-- 
-        - italic and bold font: https://getbootstrap.com/docs/4.5/utilities/text/#font-weight-and-italics
-        - light text color: https://getbootstrap.com/docs/4.5/utilities/colors/#color
-        -->
             <div class="col-md-8 bg-danger font-weight-bold font-italic text-light">
                 <h2>Stay Connected with us</h2>
                 <p>Sign up to get emails about exclusive offers from Coffe Corners!</p>
             </div>
             <div class="col-md-4 bg-warning">
-                <!-- 
-                    Button trigger modal 
-                    
-                    Adding Bootstrap button:
-                    https://getbootstrap.com/docs/4.5/components/buttons/
-
-                    - We need to connect this button with our modal,
-                    so it will activate our model window (div) when this button is clicked
-
-                    - We can do it by using: 
-                    * data-toggle="modal" 
-                    * data-target="#exampleModal"
-
-                    The link: https://getbootstrap.com/docs/4.5/components/modal/#varying-modal-content
-                -->
                 <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#signup-modal">
                     Sing Up Now
                 </button>
@@ -195,16 +162,6 @@
         </div> <!-- end div.row -->
     </div> <!-- end div.container-fluid -->
 
-    <!-- 
-    Modal (Bootstrap Component): Bootstrap’s JavaScript modal plugin to add dialogs to your site for lightboxes, 
-    user notifications, or completely custom content. 
-    The main link for Modal: https://getbootstrap.com/docs/4.5/components/modal/
-
-    The section link we used below: https://getbootstrap.com/docs/4.5/components/modal/#varying-modal-content
-
-    modify the id="exampleModal" to be id="signup-modal"
-    We renamed all the text "exampleModal" to be "signup-modal"
-    -->
     <div class="modal fade" id="signup-modal" tabindex="-1" aria-labelledby="signup-modalLabel" aria-hidden="true">
         <!-- 
         .modal-dialog: makes the modal narrower than the full width of the page
@@ -228,13 +185,90 @@
          -->
                 <div class="modal-body">
                     <form>
+                        <!-- 
+                        Practcing Different Fromat to layout the form elements
+                        -->
+                        <div class="form-row">
+                            <div class="col">
+                                <!-- 
+                                    Using Bootstrap Help Text:
+                                    https://getbootstrap.com/docs/4.0/components/forms/#help-text
+                                -->
+                                <input type="text" id="fname" class="form-control" placeholder="First Name">
+                                <small id="fnameHelp" class="form-text text-muted">Your first name with characters only
+                                    (no numbers or symbols)</small>
+                            </div>
+                            <div class="col">
+                                <input type="text" id="lname" class="form-control" placeholder="First Name">
+                                <small id="lnameHelp" class="form-text text-muted">Your first name with characters only
+                                    (no numbers or symbols)</small>
+                            </div>
+                        </div>
+                        <hr>
+
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Recipient:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                                placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <hr>
+
+                        <div class="form-group">
+                            <label for="inputAddress1">Address 1</label>
+                            <input type="text" class="form-control" id="inputAddress1" placeholder="1234 Main St">
                         </div>
                         <div class="form-group">
-                            <label for="message-text" class="col-form-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <label for="inputAddress2">Address 2</label>
+                            <input type="text" class="form-control" id="inputAddress2"
+                                placeholder="Apartment, studio, or floor">
+                        </div>
+                        <hr>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="provinceSelect">Province</label>
+                                <select class="form-control" id="provinceSelect">
+                                    <option value="AB">Alberta</option>
+                                    <option value="BC">British Columbia</option>
+                                    <option value="MB">Manitoba</option>
+                                    <option value="NB">New Brunswick</option>
+                                    <option value="NL">Newfoundland and Labrador</option>
+                                    <option value="NS">Nova Scotia</option>
+                                    <option value="ON">Ontario</option>
+                                    <option value="PE">Prince Edward Island</option>
+                                    <option value="QC">Quebec</option>
+                                    <option value="SK">Saskatchewan</option>
+                                    <option value="NT">Northwest Territories</option>
+                                    <option value="NU">Nunavut</option>
+                                    <option value="YT">Yukon</option>
+                                </select>
+                            </div>
+                        </div> <!-- end div.form-row for city and province-->
+                        <hr>
+
+                        <div class="form-check">
+                            <h5>How do you want to receive our offers?</h5>
+                            <br>
+                            <input class="form-check-input" type="checkbox" value="ebox" id="emailCheckbox">
+                            <label class="form-check-label" for="emailCheckbox">
+                                By Email
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="mbox" id="mailCheckbox">
+                            <label class="form-check-label" for="mailCheckbox">
+                                By Mail
+                            </label>
+                        </div>
+                        <hr>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -242,17 +276,22 @@
           .modal-footer:
          -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
+                    <!-- We don't need these buttons as we added one for our form -->
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button> -->
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="jumbotron text-center">
+    <div class="jumbotron text-center mb-0">
         <h1 class="display-4">Coffee Corner</h1>
         <p class="lead font-italic font-weight-bold">The corner where you can have your favourite coffee mixed with your
             favourite moments!</p>
+    </div>
+
+    <footer class="text-center bg-dark text-light">
+        &copy; 2020 - Bootstrap Simple Demo - FSSD Group of Aug 2020
     </footer>
 
     <!-- All our HTML elements have to be placed before calling our scripts: -->
