@@ -26,4 +26,4 @@ The Main Resources:
 * Free Formatter:
     * https://www.freeformatter.com/canada-province-list-html-select.html
 * W3 Validator:
-https://validator.w3.org/
+   * https://validator.w3.org/
