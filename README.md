@@ -1,4 +1,14 @@
-# bootstrap-website-sample
+# BootStrap Website Sample
+## Built with BootStrap Ver. 4.x
+
+---
+NOTE: You can open any link in a new tab using either from the following ways:
+- Hold down the CTRL Key in windows or COMMAND key in Mac then click it
+- Right-click the link and choose to open the link in a new tab or new window from the context menu
+---
+
+***NOTE: You can refer to the same Website Sample using BootStrap ver. 5.x***
+
 The Basic and Essential Bootstrap commands for FSSD Group: Module#5: User-Centric Development
 Throughout this project, I will add a few "index.htm"l files to add the Bootstrap component gradually, but in the end we will have the final index file.
 - index1.html => contains the Bootstrap starting template and examples of using its Grid System
