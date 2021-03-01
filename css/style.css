@@ -1,7 +1,7 @@
 /* Place our custom styles if we need: */
 
-/* targiting the div.new-flav which the container of the three div(s) in the new flavours */
+/* targeting the div.new-flav which the container of the three div(s) in the new flavours */
 div.new-flav>div {
-    /* box-sizing: border-box; no need to inlcude this rule as Boostrap alreayd used it*/
+    /* box-sizing: border-box; no need to include this rule as Bootstrap already used it*/
     border: 10px solid rgb(140, 140, 145);
 }
